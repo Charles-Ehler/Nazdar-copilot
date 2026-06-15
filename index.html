@@ -659,7 +659,7 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
 /* ────────────────────────────────
    SLIDE 10 - COMPLETION
 ──────────────────────────────── */
-#slide-10 .slide-inner {
+#slide-11 .slide-inner {
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   min-height: 100%; text-align: center;
@@ -672,8 +672,8 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
   display: flex; align-items: center; justify-content: center;
   margin-bottom: 24px;
 }
-/* Animate in when slide 10 becomes active */
-#slide-10.active .s10-icon-ring {
+/* Animate in when slide 11 becomes active */
+#slide-11.active .s10-icon-ring {
   animation: checkPop .55s var(--ease) both;
   animation-delay: 150ms;
 }
@@ -691,19 +691,74 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
 .s10-footer { font-size: 14px; color: var(--gray-mid); margin-top: 20px; }
 
 /* ────────────────────────────────
+   DID YOU KNOW callout
+──────────────────────────────── */
+.did-you-know {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: #f9f9f9; border-left: 4px solid var(--red);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px; margin-top: 20px;
+  box-shadow: var(--shadow-sm);
+}
+.did-you-know-icon { flex-shrink: 0; margin-top: 2px; }
+.did-you-know-body { font-size: 15px; line-height: 1.55; color: var(--gray-dark); }
+.did-you-know-label {
+  font-size: 10px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--red); display: block; margin-bottom: 5px;
+}
+
+/* Benefit headline */
+.s-benefit-line { font-size: 20px; font-weight: 600; color: var(--gray-dark); line-height: 1.45; margin-bottom: 22px; }
+
+/* ────────────────────────────────
+   SLIDE 3 (new) - Before/After benefit cards
+──────────────────────────────── */
+.s-ba-cards { display: flex; gap: 20px; margin: 20px 0; }
+.s-ba-card {
+  flex: 1; background: var(--surface); border-radius: 12px;
+  padding: 22px 20px; box-shadow: var(--shadow-sm);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.s-ba-icon {
+  width: 38px; height: 38px; background: #fff0f0; border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+}
+.s-ba-label {
+  font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .1em; display: block; margin-bottom: 3px;
+}
+.s-ba-label.before { color: var(--gray-cool); }
+.s-ba-label.after  { color: var(--red); }
+.s-ba-before {
+  font-size: 15px; color: var(--gray-cool); line-height: 1.5;
+  padding: 10px 12px; background: var(--bg); border-radius: 7px;
+}
+.s-ba-after {
+  font-size: 15px; color: var(--gray-dark); font-weight: 600; line-height: 1.5;
+  padding: 10px 12px; background: #fff8f8; border-radius: 7px;
+  border-left: 3px solid var(--red);
+}
+.s-reassure {
+  font-size: 16px; color: var(--gray-cool); line-height: 1.6;
+  text-align: center; padding: 16px 0 0;
+  border-top: 1px solid #e8e8e8; margin-top: 8px; font-style: italic;
+}
+@media (max-width: 1000px) { .s-ba-cards { flex-direction: column; } }
+
+/* ────────────────────────────────
    RESPONSIVE
 ──────────────────────────────── */
-/* Slide 5 - fill available stage height so all prompts are visible without scrolling */
-#slide-5 { overflow: hidden; }
-#slide-5 .slide-inner {
+/* Slide 6 (During) - fill available stage height so all prompts are visible without scrolling */
+#slide-6 { overflow: hidden; }
+#slide-6 .slide-inner {
   padding-top: 20px;
   padding-bottom: 16px;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
-#slide-5 .teams-window { flex: 1; margin: 6px 0 0; min-height: 0; }
-#slide-5 .teams-body   { height: auto; flex: 1; min-height: 0; }
+#slide-6 .teams-window { flex: 1; margin: 6px 0 0; min-height: 0; }
+#slide-6 .teams-body   { height: auto; flex: 1; min-height: 0; }
 
 @media (max-width: 1100px) {
   .s2-cards   { flex-direction: column; }
@@ -715,7 +770,7 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
 }
 @media (max-width: 1024px) {
   .teams-body  { height: 340px; }
-  #slide-5 .teams-body { height: auto; }
+  #slide-6 .teams-body { height: auto; }
   .teams-panel { width: 200px; }
   .s1-layout   { flex-direction: column; }
   .s1-left     { width: 100%; padding: 28px 28px 20px; }
@@ -733,7 +788,7 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
     <div id="topbar-right">
       <span id="time-remaining" aria-live="polite"></span>
       <div id="slide-counter-wrap">
-        <span id="slide-counter-text" aria-live="polite" aria-atomic="true">Slide 1 of 10</span>
+        <span id="slide-counter-text" aria-live="polite" aria-atomic="true">Slide 1 of 11</span>
         <svg id="counter-check" viewBox="0 0 16 16" fill="none" aria-hidden="true">
           <circle cx="8" cy="8" r="7.5" fill="#00a651"/>
           <path d="M4.5 8l2.5 2.5 5-5" stroke="white" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
@@ -742,8 +797,8 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
     </div>
   </header>
 
-  <div id="progress-track" role="progressbar" aria-valuemin="1" aria-valuemax="10" aria-valuenow="1" aria-label="Course progress">
-    <div id="progress-fill" style="width:10%"></div>
+  <div id="progress-track" role="progressbar" aria-valuemin="1" aria-valuemax="11" aria-valuenow="1" aria-label="Course progress">
+    <div id="progress-fill" style="width:9.09%"></div>
   </div>
 
   <!-- ════ SLIDES ════ -->
@@ -801,6 +856,7 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
       <div class="slide-inner">
         <h2 class="slide-heading">AI at Nazdar works for you. Not the other way around.</h2>
         <div class="slide-heading-rule" aria-hidden="true"></div>
+        <p class="s-benefit-line">Copilot gives you back the most valuable thing you have at work: your time.</p>
         <div class="s2-cards">
           <div class="s2-card">
             <div class="s2-card-header">Copilot is for</div>
@@ -822,11 +878,50 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
           </div>
         </div>
         <p class="s2-note">This course is for employees with a Microsoft 365 Copilot license. Not sure if you have one? Check with IT.</p>
+        <div class="did-you-know" style="margin-top:24px">
+          <svg class="did-you-know-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2C6.686 2 4 4.686 4 8c0 2.476 1.375 4.642 3.4 5.76V15a.5.5 0 00.5.5h4.2a.5.5 0 00.5-.5v-1.24C14.625 12.642 16 10.476 16 8c0-3.314-2.686-6-6-6z" stroke="#D90000" stroke-width="1.5" fill="#fff0f0" stroke-linejoin="round"/><line x1="7.5" y1="17" x2="12.5" y2="17" stroke="#D90000" stroke-width="1.5" stroke-linecap="round"/><line x1="8.5" y1="18.5" x2="11.5" y2="18.5" stroke="#D90000" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <div class="did-you-know-body">
+            <span class="did-you-know-label">Did you know?</span>
+            People who use Copilot in meetings get their action items written for them automatically. No more scribbling notes while trying to listen.
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ─── SLIDE 3 ─── -->
-    <section class="slide" id="slide-3" aria-label="Slide 3: When Copilot earns its seat" tabindex="-1">
+    <section class="slide" id="slide-3" aria-label="Slide 3: What this means for your day" tabindex="-1">
+      <div class="slide-inner">
+        <h2 class="slide-heading">What this means for your day.</h2>
+        <div class="slide-heading-rule" aria-hidden="true"></div>
+        <div class="s-ba-cards">
+          <div class="s-ba-card">
+            <div class="s-ba-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 7h16M3 11h16M3 15h9" stroke="#D90000" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <div class="s-ba-before"><span class="s-ba-label before">Before</span>You scribble notes and miss half the conversation.</div>
+            <div class="s-ba-after"><span class="s-ba-label after">After</span>Copilot takes the notes. You stay present and actually contribute.</div>
+          </div>
+          <div class="s-ba-card">
+            <div class="s-ba-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#D90000" stroke-width="1.8"/><path d="M11 7v4.5l3 2" stroke="#D90000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="s-ba-before"><span class="s-ba-label before">Before</span>You spend an hour after every meeting writing it all up.</div>
+            <div class="s-ba-after"><span class="s-ba-label after">After</span>Copilot drafts your summary and follow-up in two minutes.</div>
+          </div>
+          <div class="s-ba-card">
+            <div class="s-ba-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M11 3a8 8 0 100 16A8 8 0 0011 3z" stroke="#D90000" stroke-width="1.8"/><path d="M11 8v3.5l2.5 1.5" stroke="#D90000" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <div class="s-ba-before"><span class="s-ba-label before">Before</span>You forget what was decided three meetings ago.</div>
+            <div class="s-ba-after"><span class="s-ba-label after">After</span>You ask Copilot, and it remembers for you.</div>
+          </div>
+        </div>
+        <p class="s-reassure">Copilot does not replace you. It clears the busywork so you can spend your time on the work only you can do.</p>
+      </div>
+    </section>
+
+    <!-- ─── SLIDE 4 ─── -->
+    <section class="slide" id="slide-4" aria-label="Slide 4: When Copilot earns its seat" tabindex="-1">
       <div class="slide-inner">
         <h2 class="slide-heading">Not every meeting needs Copilot. Sort these three.</h2>
         <div class="slide-heading-rule" aria-hidden="true"></div>
@@ -860,8 +955,8 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
       </div>
     </section>
 
-    <!-- ─── SLIDE 4 ─── -->
-    <section class="slide" id="slide-4" aria-label="Slide 4: Before the meeting" tabindex="-1">
+    <!-- ─── SLIDE 5 ─── -->
+    <section class="slide" id="slide-5" aria-label="Slide 5: Before the meeting" tabindex="-1">
       <div class="slide-inner">
         <h2 class="slide-heading">Before: 30 seconds of setup.</h2>
         <div class="slide-heading-rule" aria-hidden="true"></div>
@@ -888,11 +983,18 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
             Copied
           </span>
         </button>
+        <div class="did-you-know">
+          <svg class="did-you-know-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2C6.686 2 4 4.686 4 8c0 2.476 1.375 4.642 3.4 5.76V15a.5.5 0 00.5.5h4.2a.5.5 0 00.5-.5v-1.24C14.625 12.642 16 10.476 16 8c0-3.314-2.686-6-6-6z" stroke="#D90000" stroke-width="1.5" fill="#fff0f0" stroke-linejoin="round"/><line x1="7.5" y1="17" x2="12.5" y2="17" stroke="#D90000" stroke-width="1.5" stroke-linecap="round"/><line x1="8.5" y1="18.5" x2="11.5" y2="18.5" stroke="#D90000" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <div class="did-you-know-body">
+            <span class="did-you-know-label">Did you know?</span>
+            Copilot can catch you up on a project in seconds. Forget what was decided last week? Just ask, and it pulls the answer from your past meetings and chats.
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ─── SLIDE 5 ─── -->
-    <section class="slide" id="slide-5" aria-label="Slide 5: During the meeting" tabindex="-1">
+    <!-- ─── SLIDE 6 ─── -->
+    <section class="slide" id="slide-6" aria-label="Slide 6: During the meeting" tabindex="-1">
       <div class="slide-inner">
         <h2 class="slide-heading">During: ask, don't scribble.</h2>
         <div class="slide-heading-rule" aria-hidden="true"></div>
@@ -954,11 +1056,12 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
             </div>
           </div>
         </div>
+        <p style="margin-top:16px;font-size:17px;color:var(--gray-cool);line-height:1.55;font-style:italic">While everyone else scrambles to take notes, you stay in the conversation. Copilot captures every decision and every action item for you.</p>
       </div>
     </section>
 
-    <!-- ─── SLIDE 6 ─── -->
-    <section class="slide" id="slide-6" aria-label="Slide 6: Knowledge check 1" tabindex="-1">
+    <!-- ─── SLIDE 7 ─── -->
+    <section class="slide" id="slide-7" aria-label="Slide 7: Knowledge check 1" tabindex="-1">
       <div class="slide-inner">
         <h2 class="slide-heading">Knowledge check</h2>
         <div class="slide-heading-rule" aria-hidden="true"></div>
@@ -973,8 +1076,8 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
       </div>
     </section>
 
-    <!-- ─── SLIDE 7 ─── -->
-    <section class="slide" id="slide-7" aria-label="Slide 7: After the meeting" tabindex="-1">
+    <!-- ─── SLIDE 8 ─── -->
+    <section class="slide" id="slide-8" aria-label="Slide 8: After the meeting" tabindex="-1">
       <div class="slide-inner">
         <h2 class="slide-heading">After: from recap to follow-up in two minutes.</h2>
         <div class="slide-heading-rule" aria-hidden="true"></div>
@@ -1014,11 +1117,18 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
             <div class="s7-step-body">Copilot drafts. You edit. Check names, dates, action items, and anything sensitive before it goes out.</div>
           </div>
         </div>
+        <div class="did-you-know">
+          <svg class="did-you-know-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2C6.686 2 4 4.686 4 8c0 2.476 1.375 4.642 3.4 5.76V15a.5.5 0 00.5.5h4.2a.5.5 0 00.5-.5v-1.24C14.625 12.642 16 10.476 16 8c0-3.314-2.686-6-6-6z" stroke="#D90000" stroke-width="1.5" fill="#fff0f0" stroke-linejoin="round"/><line x1="7.5" y1="17" x2="12.5" y2="17" stroke="#D90000" stroke-width="1.5" stroke-linecap="round"/><line x1="8.5" y1="18.5" x2="11.5" y2="18.5" stroke="#D90000" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <div class="did-you-know-body">
+            <span class="did-you-know-label">Did you know?</span>
+            Copilot can turn an hour of after-meeting follow-up into two minutes. It writes your summary, lists your action items, and drafts your follow-up email while you grab your coffee.
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- ─── SLIDE 8 ─── -->
-    <section class="slide" id="slide-8" aria-label="Slide 8: Knowledge check 2" tabindex="-1">
+    <!-- ─── SLIDE 9 ─── -->
+    <section class="slide" id="slide-9" aria-label="Slide 9: Knowledge check 2" tabindex="-1">
       <div class="slide-inner">
         <h2 class="slide-heading">Knowledge check</h2>
         <div class="slide-heading-rule" aria-hidden="true"></div>
@@ -1049,8 +1159,8 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
       </div>
     </section>
 
-    <!-- ─── SLIDE 9 ─── -->
-    <section class="slide" id="slide-9" aria-label="Slide 9: The top 3 rules" tabindex="-1">
+    <!-- ─── SLIDE 10 ─── -->
+    <section class="slide" id="slide-10" aria-label="Slide 10: The top 3 rules" tabindex="-1">
       <div class="slide-inner">
         <h2 class="slide-heading">The top 3 rules</h2>
         <div class="slide-heading-rule" aria-hidden="true"></div>
@@ -1080,8 +1190,8 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
       </div>
     </section>
 
-    <!-- ─── SLIDE 10 ─── -->
-    <section class="slide" id="slide-10" aria-label="Slide 10: Course complete" tabindex="-1">
+    <!-- ─── SLIDE 11 ─── -->
+    <section class="slide" id="slide-11" aria-label="Slide 11: Course complete" tabindex="-1">
       <div class="slide-inner">
         <div class="s10-icon-ring" role="img" aria-label="Course complete checkmark">
           <svg width="36" height="28" viewBox="0 0 40 30" fill="none" aria-hidden="true"><path d="M3 15L15 27L37 3" stroke="#00a651" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1134,12 +1244,12 @@ var JOB_AID_URL = "job-aid.pdf";
   'use strict';
 
   var current   = 1;
-  var total     = 10;
-  var unlocked  = { 3: false, 5: false, 6: false, 8: false };
+  var total     = 11;
+  var unlocked  = { 4: false, 6: false, 7: false, 9: false };
   var completed = {};           /* tracks which slides user has finished */
 
   /* Estimated minutes remaining when arriving at each slide */
-  var timeLeft = [0, 6, 5.5, 4.5, 3.5, 3, 2, 1.5, 1, 0.5, 0];
+  var timeLeft = [0, 6, 5.5, 5, 4.5, 3.5, 3, 2.5, 2, 1.5, 0.5, 0];
 
   var s3Correct  = { 1: 'bring', 2: 'leave', 3: 'leave' };
   var s3State    = { 1: null, 2: null, 3: null };
@@ -1271,10 +1381,10 @@ var JOB_AID_URL = "job-aid.pdf";
       nextBtn.disabled    = true;
       nextBtn.textContent = 'Next';
       var hints = {
-        3: 'Sort all three meetings to continue.',
-        5: 'Explore all four prompts to continue.',
-        6: 'Answer the question to continue.',
-        8: 'Answer the question to continue.'
+        4: 'Sort all three meetings to continue.',
+        6: 'Explore all four prompts to continue.',
+        7: 'Answer the question to continue.',
+        9: 'Answer the question to continue.'
       };
       hintSpan.textContent = hints[current] || '';
     } else {
@@ -1419,7 +1529,7 @@ var JOB_AID_URL = "job-aid.pdf";
 
     /* Check if all three are correct */
     if (s3State[1] === 'correct' && s3State[2] === 'correct' && s3State[3] === 'correct') {
-      unlock(3);
+      unlock(4);
     }
   }
 
@@ -1484,7 +1594,7 @@ var JOB_AID_URL = "job-aid.pdf";
           } else {
             ctr.textContent = '4 of 4 explored. All set.';
             ctr.classList.add('done');
-            unlock(5);
+            unlock(6);
           }
         }
       }
@@ -1527,7 +1637,7 @@ var JOB_AID_URL = "job-aid.pdf";
     if (result.ok) {
       kc1Done = true;
       document.getElementById('kc1-retry').classList.remove('show');
-      unlock(6);
+      unlock(7);
     } else {
       document.getElementById('kc1-retry').classList.add('show');
     }
@@ -1579,7 +1689,7 @@ var JOB_AID_URL = "job-aid.pdf";
     if (result.ok) {
       kc2Done = true;
       document.getElementById('kc2-retry').classList.remove('show');
-      unlock(8);
+      unlock(9);
     } else {
       document.getElementById('kc2-retry').classList.add('show');
     }
