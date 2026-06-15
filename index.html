@@ -244,6 +244,27 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
   background: radial-gradient(circle, rgba(255,255,255,.06) 0%, transparent 70%);
   pointer-events: none;
 }
+/* Slide 1 Start button - white fill on red panel so it stands out clearly */
+.s1-start-btn {
+  font-family: var(--font);
+  font-size: 17px;
+  font-weight: 700;
+  padding: 14px 44px;
+  border-radius: var(--r);
+  border: none;
+  cursor: pointer;
+  background: #fff;
+  color: var(--red);
+  box-shadow: 0 3px 12px rgba(0,0,0,.22);
+  letter-spacing: .01em;
+  line-height: 1;
+  transition: background var(--dur) var(--ease), transform 100ms var(--ease), box-shadow var(--dur) var(--ease);
+  align-self: flex-start;
+}
+.s1-start-btn:hover  { background: #f5f5f5; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.28); }
+.s1-start-btn:active { transform: translateY(0); box-shadow: 0 2px 6px rgba(0,0,0,.16); }
+.s1-start-btn:focus-visible { outline: 3px solid rgba(255,255,255,.75); outline-offset: 3px; }
+
 .s1-motif-wrap { position: absolute; bottom: 28px; left: 44px; }
 .s1-label { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.65); margin-bottom: 20px; }
 .s1-title { font-size: 36px; font-weight: 700; line-height: 1.12; margin-bottom: 14px; }
@@ -291,7 +312,7 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
 .s2-card { flex: 1; background: var(--surface); border-radius: 10px; padding: 28px 28px 24px; box-shadow: var(--shadow-sm); }
 .s2-card-header { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: var(--white); background: var(--red); display: inline-block; padding: 5px 14px; border-radius: 5px; margin-bottom: 16px; }
 .s2-card ul { list-style: none; padding: 0; }
-.s2-card ul li { font-size: 17px; padding: 8px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px; color: var(--gray-dark); line-height: 1.45; }
+.s2-card ul li { font-size: 18px; padding: 8px 0; border-bottom: 1px solid #f0f0f0; display: flex; align-items: flex-start; gap: 10px; color: var(--gray-dark); line-height: 1.45; }
 .s2-card ul li:last-child { border-bottom: none; }
 .s2-card ul li::before { content: "•"; color: var(--red); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 .s2-note { font-size: 15px; color: var(--gray-cool); border-top: 1px solid #ddd; padding-top: 20px; margin-top: 12px; }
@@ -521,8 +542,8 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
   background: #fff; border: 1px solid #e4e4e4; border-radius: 7px;
   color: #444; padding: 6px 9px; cursor: pointer;
   transition: background .14s, border-color .14s, color .14s, opacity .18s;
-  width: 100%; line-height: 1.3;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  width: 100%; line-height: 1.35;
+  white-space: normal;
 }
 .s5-sugg-btn:hover:not(:disabled):not(.used) { background: #f0f6fd; border-color: #0f6cbd; color: #0f6cbd; }
 .s5-sugg-btn:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
@@ -542,7 +563,7 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
   border-left: 4px solid var(--red);
   padding: 18px 22px;
   border-radius: 0 8px 8px 0;
-  font-size: 19px; font-weight: 600;
+  font-size: 18px; font-weight: 600;
   margin-bottom: 28px; line-height: 1.4;
   box-shadow: var(--shadow-sm);
 }
@@ -557,7 +578,7 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
   transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease),
               box-shadow var(--dur) var(--ease), opacity var(--dur) var(--ease),
               transform 100ms var(--ease);
-  font-size: 17px; text-align: left; font-family: var(--font); width: 100%; line-height: 1.4;
+  font-size: 18px; text-align: left; font-family: var(--font); width: 100%; line-height: 1.4;
 }
 .kc-option:hover:not(:disabled):not(.selected-correct):not(.selected-incorrect):not(.unselected) {
   border-color: var(--red); background: #fff8f8;
@@ -612,7 +633,7 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
 .s7-step { flex: 1; background: var(--surface); border-radius: 10px; padding: 22px 20px; box-shadow: var(--shadow-sm); }
 .s7-step.emphasized { border: 2px solid var(--red); }
 .s7-step-num { width: 30px; height: 30px; background: var(--red); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; margin-bottom: 10px; }
-.s7-step-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; color: var(--gray-dark); line-height: 1.3; }
+.s7-step-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: var(--gray-dark); line-height: 1.3; }
 .s7-step-body { font-size: 15px; color: var(--gray-cool); line-height: 1.55; }
 .s7-chips { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
 .s7-arrow { align-self: center; font-size: 20px; color: #ccc; padding: 0 8px; flex-shrink: 0; }
@@ -672,6 +693,18 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
 /* ────────────────────────────────
    RESPONSIVE
 ──────────────────────────────── */
+/* Slide 5 - fill available stage height so all prompts are visible without scrolling */
+#slide-5 { overflow: hidden; }
+#slide-5 .slide-inner {
+  padding-top: 20px;
+  padding-bottom: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#slide-5 .teams-window { flex: 1; margin: 6px 0 0; min-height: 0; }
+#slide-5 .teams-body   { height: auto; flex: 1; min-height: 0; }
+
 @media (max-width: 1100px) {
   .s2-cards   { flex-direction: column; }
   .s7-flow    { flex-direction: column; gap: 12px; }
@@ -682,6 +715,7 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
 }
 @media (max-width: 1024px) {
   .teams-body  { height: 340px; }
+  #slide-5 .teams-body { height: auto; }
   .teams-panel { width: 200px; }
   .s1-layout   { flex-direction: column; }
   .s1-left     { width: 100%; padding: 28px 28px 20px; }
@@ -722,7 +756,7 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
           <p class="s1-label">Nazdar AI Enablement Series</p>
           <h1 class="s1-title">Copilot in Teams Meetings</h1>
           <p class="s1-subtitle">Before, During, After</p>
-          <button class="btn btn-primary" onclick="goTo(2)" aria-label="Start the course">Start</button>
+          <button class="s1-start-btn" onclick="goTo(2)" aria-label="Start the course">Start</button>
         </div>
         <div class="s1-right">
           <!-- CSS Teams illustration -->
@@ -757,7 +791,7 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
               </div>
             </div>
           </div>
-          <p class="s1-hook">Your last project meeting. Who owned the follow-ups? What was decided? If you had to dig through your notes, this course is for you.</p>
+          <p class="s1-hook">Think back to your last project meeting. Could you name every decision and who owns the follow-ups? If you would have to dig through your notes, this course is for you.</p>
         </div>
       </div>
     </section>
@@ -773,7 +807,7 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
             <ul>
               <li>Taking notes so you can focus on the conversation</li>
               <li>Writing meeting recaps after the call ends</li>
-              <li>Drafting follow-up emails based on what was decided</li>
+              <li>Drafting follow-up emails based on decisions made</li>
               <li>Catching you up when you join a meeting late</li>
             </ul>
           </div>
@@ -926,7 +960,7 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
     <!-- ─── SLIDE 6 ─── -->
     <section class="slide" id="slide-6" aria-label="Slide 6: Knowledge check 1" tabindex="-1">
       <div class="slide-inner">
-        <h2 class="slide-heading">Knowledge Check</h2>
+        <h2 class="slide-heading">Knowledge check</h2>
         <div class="slide-heading-rule" aria-hidden="true"></div>
         <div class="kc-scenario" role="blockquote">You joined the 2:00 PM Central Time supply chain sync 12 minutes late. What's your best move?</div>
         <div class="kc-options" id="kc1-options" role="group" aria-label="Answer choices">
@@ -986,7 +1020,7 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
     <!-- ─── SLIDE 8 ─── -->
     <section class="slide" id="slide-8" aria-label="Slide 8: Knowledge check 2" tabindex="-1">
       <div class="slide-inner">
-        <h2 class="slide-heading">Knowledge Check</h2>
+        <h2 class="slide-heading">Knowledge check</h2>
         <div class="slide-heading-rule" aria-hidden="true"></div>
         <div class="s8-email" role="region" aria-label="Simulated draft follow-up email">
           <div class="s8-email-toolbar">
@@ -1007,8 +1041,8 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
         <div class="kc-scenario" role="blockquote">Copilot drafted your follow-up, but it lists Maria as the owner of integration testing, and that one is actually yours. What do you do?</div>
         <div class="kc-options" id="kc2-options" role="group" aria-label="Answer choices">
           <button class="kc-option" onclick="kc2Answer('A')" id="kc2-A"><span class="kc-letter" aria-hidden="true">A</span><span>Send it. Close enough.</span></button>
-          <button class="kc-option" onclick="kc2Answer('B')" id="kc2-B"><span class="kc-letter" aria-hidden="true">B</span><span>Fix the owner, give it one full read, then send.</span></button>
-          <button class="kc-option" onclick="kc2Answer('C')" id="kc2-C"><span class="kc-letter" aria-hidden="true">C</span><span>Stop using Copilot drafts. It can't be trusted.</span></button>
+          <button class="kc-option" onclick="kc2Answer('B')" id="kc2-B"><span class="kc-letter" aria-hidden="true">B</span><span>Stop using Copilot drafts. It can't be trusted.</span></button>
+          <button class="kc-option" onclick="kc2Answer('C')" id="kc2-C"><span class="kc-letter" aria-hidden="true">C</span><span>Fix the owner, give it one full read, then send.</span></button>
         </div>
         <div class="kc-feedback" id="kc2-feedback" role="alert"></div>
         <button class="kc-try-again" id="kc2-retry" onclick="kc2Reset()">Try Again</button>
@@ -1016,9 +1050,9 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
     </section>
 
     <!-- ─── SLIDE 9 ─── -->
-    <section class="slide" id="slide-9" aria-label="Slide 9: The three rules" tabindex="-1">
+    <section class="slide" id="slide-9" aria-label="Slide 9: The top 3 rules" tabindex="-1">
       <div class="slide-inner">
-        <h2 class="slide-heading">The three rules.</h2>
+        <h2 class="slide-heading">The top 3 rules</h2>
         <div class="slide-heading-rule" aria-hidden="true"></div>
         <div class="s9-rules" role="list">
           <div class="s9-rule" role="listitem">
@@ -1056,7 +1090,7 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
         <p class="s10-course-label">Copilot in Teams Meetings: Before, During, After</p>
         <p class="s10-big-line">Copilot takes the notes. You make the decisions.</p>
         <p class="s10-sub-line">Neither is complete without the other.</p>
-        <a href="#" class="btn btn-primary" style="text-decoration:none;display:inline-block" aria-label="Download the quick reference guide">Download the quick reference guide</a>
+        <a href="#" id="job-aid-link" class="btn btn-primary" style="text-decoration:none;display:inline-block" aria-label="Download the quick reference guide" target="_blank" rel="noopener">Download the quick reference guide</a>
         <div class="s10-callout">
           <strong>Used Copilot to save real time this week?</strong> Share it at the next AI Spotlight.
         </div>
@@ -1075,6 +1109,24 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
 </div><!-- #shell -->
 
 <script>
+/* =========================================================
+   PASTE YOUR JOB AID LINK HERE
+   Put the PDF in the same GitHub repo (for example: job-aid.pdf)
+   then set the filename below. Leave the quotes.
+   Example: var JOB_AID_URL = "Copilot-Quick-Reference.pdf";
+   ========================================================= */
+var JOB_AID_URL = "job-aid.pdf";
+
+(function wireJobAid(){
+  function attach(){
+    var link = document.getElementById('job-aid-link');
+    if (link) { link.setAttribute('href', JOB_AID_URL); }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attach);
+  } else { attach(); }
+})();
+
 /* ═══════════════════════════════════════════════════
    COURSE CONTROLLER
 ═══════════════════════════════════════════════════ */
@@ -1495,12 +1547,12 @@ html, body { height: 100%; font-family: var(--font); background: var(--bg); colo
 
   /* ────────────────────────────────
      KNOWLEDGE CHECK 2 (slide 8)
-     Correct answer: B
+     Correct answer: C
   ──────────────────────────────── */
   var kc2Fb = {
     A: { ok: false, msg: "Close enough costs Maria a confusing Friday and costs you credibility. Thirty seconds of review prevents both." },
-    B: { ok: true,  msg: "That's the editor rule in action. Copilot did ninety percent of the work. Your review is the ten percent that makes it right." },
-    C: { ok: false, msg: "One error doesn't make the tool useless. It makes your review essential. That's the whole partnership." }
+    B: { ok: false, msg: "One error doesn't make the tool useless. It makes your review essential." },
+    C: { ok: true,  msg: "That's the editor rule in action. Copilot did ninety percent of the work. Your review is the ten percent that makes it right." }
   };
 
   function kc2Answer(letter) {
